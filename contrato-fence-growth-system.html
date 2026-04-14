@@ -23,8 +23,8 @@
   --font-b: 'Inter', sans-serif;
   --font-m: 'DM Mono', monospace;
 }
-@page { size: Letter; margin: 0.55in 0.6in; }
-* { box-sizing: border-box; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+@page { size: Letter; margin: 0; }
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
 html, body {
   background: var(--bg);
   color: var(--light);
@@ -35,17 +35,23 @@ html, body {
   padding: 0;
   -webkit-font-smoothing: antialiased;
 }
+.content-wrap {
+  padding: 0.55in 0.7in;
+  background: var(--bg);
+}
 
 /* ===== COVER ===== */
 .cover {
-  min-height: 9.5in;
-  padding: 60px 40px;
+  width: 8.5in;
+  height: 11in;
+  padding: 0.8in 0.7in;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   page-break-after: always;
   background: var(--bg);
   position: relative;
+  overflow: hidden;
 }
 .cover::before {
   content: '';
@@ -399,6 +405,8 @@ td strong { color: var(--white); }
   </div>
 </div>
 
+<div class="content-wrap">
+
 <!-- ================== SECTION 1 ================== -->
 <div class="section">
   <div class="section-num">01 / Scope</div>
@@ -663,6 +671,8 @@ td strong { color: var(--white); }
     FENCE GROWTH SYSTEM <span class="y">·</span> SERVICE AGREEMENT <span class="y">·</span> 2026
   </div>
 </div>
+
+</div><!-- /.content-wrap -->
 
 </body>
 </html>
